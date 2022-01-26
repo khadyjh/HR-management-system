@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+header{
+    height: 100px;
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#FFD5CD ;
+
+}
+.container{
+    width: 1140px;
+    margin: 0 auto;
+}
+header .header-nav a{
+    padding: 10px 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: #7E8A97;
+   }
+
+
+   body{
+    display: grid;
+    grid-template-rows: 100px 1fr 50px;
+    grid-template-columns: 1fr 1fr;
+}
+
+fieldset{
+    margin-top: 13px;
+}
+form{
+    padding: 20px;
+}
+main{
+    grid-column: 1/-1;
+    /* background-color: #C3AED6; */
+}
+footer{
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
