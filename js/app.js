@@ -5,7 +5,7 @@
 let infoForm = document.getElementById("infoForm");
 let dataSection = document.getElementById("dataEntared");
 let allEmp = []
-check1()
+check1();
 function generateIdNumber() {
 
     let a = Math.floor(100000 + Math.random() * 900000);
@@ -106,15 +106,18 @@ function Employee(empId, fullName, department, level, imgurl,salary) {
     let netSalary;
     switch (level1) {
         case "Senior":
-            salaryR = Math.floor(Math.random() * 2000) + 1500;
+            salaryR = Math.floor(Math.random() * (2000 - 1500 + 1)) + 2000; 
+            
 
             break;
         case "Mid-Senior":
-            salaryR = Math.floor(Math.random() * 1500) + 1000;
+            salaryR =Math.floor(Math.random() * (1500 - 1000 + 1)) + 1500; 
+            ;
 
             break;
         case "Junior":
-            salaryR = Math.floor(Math.random() * 1000) + 500;
+            salaryR = Math.floor(Math.random() * (1000 - 500 + 1)) + 500; 
+            ;
 
             break;
 
