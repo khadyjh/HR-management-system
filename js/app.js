@@ -78,22 +78,25 @@ Employee.prototype.calculate = function () {
     let netSalary;
     switch (this.level) {
         case "Senior":
-            salaryR = Math.floor(Math.random() * 2000) + 1500;
-
+            salaryR = Math.floor(Math.random() * (2000 - 1500)) + 1500;
+            
             break;
         case "Mid-Senior":
-            salaryR = Math.floor(Math.random() * 1500) + 1000;
+            salaryR = Math.floor(Math.random() * (1500 - 1000)) + 1000;
 
             break;
         case "Junior":
-            salaryR = Math.floor(Math.random() * 1000) + 500;
+            salaryR = Math.floor(Math.random() * (1000 - 500)) + 500;;
 
             break;
 
     }
 
-    netSalary = (salaryR * 7.2) - salaryR;
-    return Math.floor(netSalary);
+
+    netSalary =   salaryR - (salaryR * (7.5/100));
+    
+    return Math.floor(netSalary) ;
+
 }
 function handelSubmit(event) {
     event.preventDefault();
@@ -106,6 +109,7 @@ function handelSubmit(event) {
     // console.log( `${name} ${dep} ${level} ${imgUrl}`)
     const newEmp = new Employee(empId, name, dep, level, imgUrl);
     newEmp.render();
+
 }
 
 Employee.prototype.render = function () {
@@ -163,6 +167,8 @@ Employee.prototype.render = function () {
 }
 
 
+
+
 // const Emp1=new Employee(1000,"Ghazi Samer","Administration", "Senior");
 // Emp1.render();
 // const Emp2=new Employee(1001,"Lana Ali","Finance", "Senior",);
@@ -177,6 +183,8 @@ Employee.prototype.render = function () {
 // Emp6.render();
 // const Emp7=new Employee(1006,"SHadi Ahmad","AFinance", "Mid-Senior");
 // Emp7.render();
+
+
 
 
 infoForm.addEventListener('submit', handelSubmit);
