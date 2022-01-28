@@ -70,22 +70,23 @@ Employee.prototype.calculate = function () {
     let netSalary;
     switch (this.level) {
         case "Senior":
-            salaryR = Math.floor(Math.random() * 2000) + 1500;
-
+            salaryR = Math.floor(Math.random() * (2000 - 1500)) + 1500;
+            
             break;
         case "Mid-Senior":
-            salaryR = Math.floor(Math.random() * 1500) + 1000;
+            salaryR = Math.floor(Math.random() * (1500 - 1000)) + 1000;
 
             break;
         case "Junior":
-            salaryR = Math.floor(Math.random() * 1000) + 500;
+            salaryR = Math.floor(Math.random() * (1000 - 500)) + 500;;
 
             break;
 
     }
 
-    netSalary = (salaryR * 7.2)- salaryR ;
-    return netSalary;
+    netSalary =   salaryR - (salaryR * (7.5/100));
+    
+    return Math.floor(netSalary) ;
 }
 
 Employee.prototype.render=function(){
@@ -99,5 +100,15 @@ Emp2.render();
 const Emp3=new Employee(1003,"Safi Walid","Administration", "Mid-Senior");
 Emp3.render();
 
+const Emp4=new Employee(1002,"Tamara Ayoub","	Marketing", "Senior");
+Emp4.render();
 
+const Emp5=new Employee(1004,"Omar Zaid","Development", "Senior");
+Emp5.render();
+
+const Emp6=new Employee(1005,"Rana Saleh","	Development", "Junior");
+Emp6.render();
+
+const Emp7=new Employee(1006,"	Hadi Ahmad","	Finance", "Mid-Senior");
+Emp7.render();
 
